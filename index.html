@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compre Sua Rifa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #ffb6c1;            
+            background-image: url('bailarina.png'); /* Caminho relativo para a imagem */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header, .about, .status, .price, .buy, .about-link {
+            background-color: rgba(255, 105, 180, 0.8); /* 80% de transparência */
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: black; /* Texto com 100% de opacidade */
+            text-decoration: none;
+        }
+
+        .about {
+            font-size: 18px;
+        }
+
+        .status {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 300px;
+            font-size: 16px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 400px;
+            height: 400px;
+            background-color: rgba(255, 105, 180, 0.8); /* 80% de transparência */
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            gap: 5px;
+        }
+
+        .number {
+            background-color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: black; /* Texto com 100% de opacidade */
+        }
+
+        .price {
+            font-size: 18px;
+        }
+
+        .buy, .about-link {
+            cursor: pointer;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            background-color: rgba(255, 105, 180, 0.8); /* 80% de transparência */
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .buy:hover, .about-link:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">COMPRE SUA RIFA</div>
+        <a href="sobrenos.html" class="about-link">SOBRE NÓS</a>
+        <div class="status">
+            <span>DISPONÍVEL <span class="dot black"></span></span>
+            <span>COMPRADO <span class="dot yellow"></span></span>
+        </div>
+        <div class="card" id="card"></div>
+        <div class="price">VALOR DE CADA NÚMERO: R$10</div>
+        <a href="comprar.html" class="buy">COMPRAR</a>
+    </div>
+
+    <script>
+        const card = document.getElementById('card');
+        for (let i = 301; i <= 350; i++) {
+            const numberDiv = document.createElement('div');
+            numberDiv.className = 'number';
+            numberDiv.textContent = i;
+            card.appendChild(numberDiv);
+        }
+    </script>
+</body>
+</html>
